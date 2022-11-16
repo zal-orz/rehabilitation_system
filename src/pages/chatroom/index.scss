@@ -1,0 +1,70 @@
+.nav{
+    margin: 0;
+}
+
+.box{
+    width: 100%;
+    height: 86vh;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    .msgbox{
+        height: 70%;
+        width: 100%;
+        box-sizing: border-box;
+        border: 2px solid pink;
+        padding: 10px;
+        background: #efefef;
+        overflow: scroll;
+    }
+    .textarea{
+        height: 26%;
+        width: 100%;
+        box-sizing: border-box;
+        border: 2px solid pink;
+        resize: none;
+        padding: 10px;
+    }
+}
+
+.msg{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    section{
+        flex:1;
+        background: #fff;
+        border-radius: 6px;
+        position: relative;
+        padding: 10px;
+        box-sizing: border-box;
+        word-break: break-all;
+    }
+    section::after{
+        content: "";
+        width: 0;height: 0;
+        position: absolute;
+        left: -11px;top: 9px;
+        border: 6px solid transparent;
+        border-right-color: #fff;
+    }
+}
+.left section{
+    margin-left: 10px;
+}
+.right section{
+    margin-right: 10px;
+}
+.right section::after{
+    border-right-color: transparent;
+    border-left-color: #fff;
+    left:auto;
+    right: -11px;
+}
