@@ -1,0 +1,390 @@
+<!DOCTYPE>
+<html>
+
+	<head>
+		<script src="bootstrap3.2.0/js/jquery-1.11.0.min.js"></script>
+		<script src="bootstrap3.2.0/js/bootstrap.js"></script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>广师约跑</title>
+
+		<link rel="stylesheet" href="bootstrap3.2.0/css/bootstrap.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+		<!--登陆条-->
+		<div id="load-nav">
+
+			<div class="container">
+				<p class="pull-right visible-xs" id="teshu">
+					<button class="btn btn-sm btn-primary" id="yincang" data-toggle="modal" data-target="#myModal">搜索</button>
+				</p>
+				<!-- 模态框（Modal）搜索 -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times; </button>
+								<h4 class="modal-title" id="myModalLabel"> 内容搜索</h4>
+							</div>
+							<div class="modal-body">
+								<form class="navbar-form " role="search">
+									<div class="form-group">
+
+										<input type="text" class="form-control" id="model-text" placeholder="请输入搜索内容">
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary">
+                       搜索
+                    </button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal -->
+				</div>
+
+				<form id="Inform" class="navbar-form navbar-left " role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" id="key" placeholder="请输入搜索内容">
+						<button type="submit" class="btn btn-default btn-sm">搜索</button>
+					</div>
+				</form>
+
+				<button class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#loadModal" id="loadPositive">
+         登陆
+      </button>
+				<script>
+					var Bwidth = document.documentElement.clientWidth; //搜索隐藏
+					var Inform = document.getElementById('Inform');
+					if(Bwidth <= 750) {
+						Inform.style.display = 'none';
+					} else {
+						Inform.style.display = 'block';
+					};
+				</script>
+				<!-- 模态框（Modal）登陆 -->
+				<div class="modal fade" id="loadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<!--选项卡-->
+							<ul id="myTab" class="nav nav-tabs">
+								<li class="active">
+									<a href="#winxinLoad" data-toggle="tab">
+										微信登陆
+									</a>
+								</li>
+								<li>
+									<a href="#xuehaoLoad" data-toggle="tab">学号登录</a>
+								</li>
+							</ul>
+							<div id="myTabContent" class="tab-content">
+								<div class="tab-pane fade in active" id="winxinLoad">
+									<h4>请用微信扫码登陆</h4>
+									<img class="img-responsive" src="images/weixin1.jpg" alt="">
+								</div>
+								<div class="tab-pane fade" id="xuehaoLoad">
+									<form class="navbar-form " role="search">
+										<div class="form-group">
+											<p>
+												<label for="#xuehao">学号</label>
+												<input type="text" class="form-control" id="xuehao" placeholder="请输入学号">
+											</p>
+											<p>
+												<label for="#xuehao">密码</label>
+												<input type="password" class="form-control" id="xuehao" placeholder="请输入密码">
+
+											</p>
+											<div class="checkbox">
+												<label>
+									                <input type="checkbox"> 记住密码
+									                <a href="#">忘记密码</a>
+									            </label>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary">
+							               登陆
+							    </button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+            					</button>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal -->
+				</div>
+			</div>
+
+		</div>
+		<!--header start-->
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<nav class="navbar navbar-inverse" id="Hnav" role="navigation">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header" id="Nhead">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+								<a class="navbar-brand" id="brandA" href="#">广师约跑</a>
+
+							</div>
+
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav" id="Dropul">
+									<li>
+										<a href="index.html" target="_blank">首页</a>
+									</li>
+									<li>
+										<a href="ativity.html" target="_blank">约跑活动</a>
+									</li>
+									<li class="active">
+										<a href="#">约跑装备</a>
+									</li>
+									<li>
+										<a href="person.html" target="_blank">个人中心</a>
+									</li>
+								</ul>
+							</div>
+							<!-- /.navbar-collapse -->
+						</nav>
+					</div>
+					<!--col-md-8-->
+				</div>
+				<!--row-->
+			</div>
+			<!-- container -->
+		</header>
+		<!--header end-->
+
+		<!--ativity-info start-->
+		<div id="ativity-info">
+			<div class="container">
+				<h5><a href="index.html">首页</a>>李宁小Y3黑武士训练鞋</h5>
+				<div class="row row-box pro-row">
+
+					<div class="col-md-5 col-sm-5">
+						<img class="img-responsive" src="images/shoes.jpg" alt="">
+						<div class="row" id="pro-small-img">
+							<img class="col-md-2 col-sm-3 col-xs-3" src="images/shoes.jpg" alt="">
+							<img class="col-md-2 col-sm-3 col-xs-3" src="images/shoes.jpg" alt="">
+							<img class="col-md-2 col-sm-3 col-xs-3" src="images/shoes.jpg" alt="">
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-7">
+						<h4><strong>李宁小Y3黑武士训练鞋 网面透气黑白奥利奥跑步鞋休闲鞋AFPK013-3</strong></h4>
+						<p>价格：<label for="" id="price">￥ 219.00</label><label for="" id="you">免邮</label></p>
+						<p>配送至：
+							<select name="" id="">
+								<option value="">广州市</option>
+								<option value="">茂名市</option>
+								<option value="">珠海市</option>
+							</select>
+							<select name="" id="">
+								<option value="">天河区</option>
+								<option value="">海珠区</option>
+								<option value="">白云区</option>
+							</select>
+						</p>
+						<hr>
+						<p>鞋码：
+							<input type="radio" name="size">39
+							<input type="radio" name="size">40
+							<input type="radio" name="size">41
+							<input type="radio" name="size">42
+							<input type="radio" name="size">43
+							<input type="radio" name="size">44
+						</p>
+						<p>
+							颜色：
+							<input type="radio" name="color">红色
+							<input type="radio" name="color">黑色
+							<input type="radio" name="color">白色
+						</p>
+						<p>
+							数量：
+							<input type="number" id="input-num" value="1"><label for="">库存255件</label>
+						</p>
+						<hr>
+						<button class="btn btn-primary">立即购买</button>
+						<button class="btn btn-danger"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;加入购物车</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--ativity-info end-->
+
+		<!--ativity-tab start-->
+		<div id="ativity-tab">
+			<div class="container">
+				<div class="row">
+					<ul id="myTab" class="nav nav-tabs  myTab1">
+						<li class="active">
+							<a href="#ati-info" data-toggle="tab">宝贝详情</a>
+						</li>
+						<li>
+							<a href="#ati-comment" data-toggle="tab">累积评论<label for="" id="comment-num">0</label></a>
+						</li>
+					</ul>
+
+					<div id="pro-box" class="tab-content">
+						<div class="tab-pane fade in active" id="ati-info">
+							<ul class="row" id="pro-list">
+
+								<li class="col-md-4 col-sm-4 col-xs-4" title="Y-3-黑武士">颜色分类:&nbsp;Y-3-黑武士</li>
+								<li class="col-md-4 col-sm-4 col-xs-4" title="AFPK013-3">款号:&nbsp;AFPK013-3</li>
+								<li class="col-md-4 col-sm-4 col-xs-4" title="Lining/李宁">品牌:&nbsp;Lining/李宁</li>
+								<li class="col-md-4 col-sm-4 col-xs-4" title="2015年夏季">上市时间:&nbsp;2015年夏季</li>
+								<li class="col-md-4 col-sm-4 col-xs-4" title="269">吊牌价:&nbsp;269</li>
+								<li class="col-md-4 col-sm-4 col-xs-4" title="男子">性别:&nbsp;男子</li>
+								<li class="col-md-4 col-sm-4 col-xs-4" title="网布">帮面材质:&nbsp;网布</li>
+								<li class="col-md-4 col-sm-4 col-xs-4" title="IP大底">外底材料:&nbsp;IP大底</li>
+								<li class="col-md-4 col-sm-4 col-xs-4" title="39 40 41 41.5 42 43 43.5 44 45">鞋码:&nbsp;39 40 41 41.5 42 43 43.5 44 45</li>
+								<li class="col-md-4 col-sm-4 col-xs-4" title="不系带">闭合方式:&nbsp;不系带</li>
+								<li class="col-md-4 col-sm-4 col-xs-4" title="生活系列">运动系列:&nbsp;生活系列</li>
+								<li class="col-md-4 col-sm-4 col-xs-4" title="否">是否瑕疵:&nbsp;否</li>
+							</ul>
+							<hr>
+							<div class="row">
+								<div class="col-md-offset-2">
+									<img class="img-responsive" src="images/li1.jpg" alt="">
+								</div>
+								<div class="col-md-offset-2">
+									<img class="img-responsive" src="images/li2.jpg" alt="">
+								</div>
+								<div class="col-md-offset-2">
+									<img class="img-responsive" src="images/li3.jpg" alt="">
+								</div>
+								<div class="col-md-offset-2">
+									<img class="img-responsive" src="images/li4.jpg" alt="">
+								</div>
+								<div class="col-md-offset-2">
+									<img class="img-responsive" src="images/li5.jpg" alt="">
+								</div>
+								<div class="col-md-offset-2">
+									<img class="img-responsive" src="images/li6.jpg" alt="">
+								</div>
+								<div class="col-md-offset-2">
+									<img class="img-responsive" src="images/li7.jpg" alt="">
+								</div>
+								<div class="col-md-offset-2">
+									<img class="img-responsive" src="images/li8.jpg" alt="">
+								</div>
+								<div class="col-md-offset-2">
+									<img class="img-responsive" src="images/li9.jpg" alt="">
+								</div>
+								<div class="col-md-offset-2">
+									<img class="img-responsive" src="images/li10.jpg" alt="">
+								</div>
+
+							</div>
+
+						</div>
+						<div class="tab-pane fade" id="ati-comment">
+							<ul id="ul1"></ul>
+							<textarea name="" id="txt1" cols="80" rows="10"></textarea>
+							<br>
+							<button id="btn1" type="submit" class="btn btn-primary">提交</button>
+						</div>
+						<script>
+							window.onresize = window.onload = function() { //评论框功能代码
+								oUl = document.getElementById('ul1');
+								oBtn = document.getElementById('btn1');
+								oTxt = document.getElementById('txt1');
+								var myTab1 = document.getElementsByClassName('myTab1')[0];
+								oTxt.style.width = myTab1.offsetWidth + 'px';
+								oBtn.onclick = function() {
+									if(oTxt.value == '') {
+										alert('内容不能为空！');
+										return false;
+									}
+									var oLi = document.createElement('li');
+									var aLi = oUl.getElementsByTagName('li');
+
+									oLi.innerHTML = "<img style='width:4%;border-radius:50%;' src='images/person.jpg' />:" + oTxt.value;
+									oLi.className = 'commentLi';
+									if(aLi.length == 0) {
+										oUl.appendChild(oLi);
+									} else {
+										oUl.insertBefore(oLi, aLi[0]);
+									}
+
+									oTxt.value = '';
+								}
+
+								var Bwidth = document.documentElement.clientWidth; //搜索隐藏
+								var Inform = document.getElementById('Inform');
+								if(Bwidth <= 750) {
+									Inform.style.display = 'none';
+								} else {
+									Inform.style.display = 'block';
+								};
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--ativity-tab end-->
+		<footer>
+			<div class="container">
+				<p>
+					<a href="http://www.gdin.edu.cn/" target="_blank">学校首页</a>
+					<a href="#">关于我们</a>
+					<a href="#">联系我们</a>
+					<a href="#" class="a-right">加入我们</a>
+				</p>
+				<p>线上广师--广师约跑 © 2016</p>
+				<p>广州市中山大道293号广东技术师范学院</p>
+
+				<button id="toTop" style="display: block;"></button>
+				<script>
+					var toTop = document.getElementById('toTop'); //回到顶部功能代码
+					var timer = null;
+					var bSys = null;
+
+					//如何检测到用户操作了滚动条
+					window.onscroll = function() {
+						if(!bSys) {
+							clearInterval(timer);
+						};
+						bSys = false;
+					}
+
+					toTop.onclick = function() {
+
+						timer = setInterval(function() {
+							var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+							var iSpeed = Math.floor(-scrollTop / 8);
+							if(scrollTop == 0) {
+								clearInterval(timer);
+							};
+							document.body.scrollTop = scrollTop + iSpeed;
+							bSys = true;
+						}, 30)
+
+					}
+				</script>
+			</div>
+		</footer>
+
+	</body>
+
+</html>

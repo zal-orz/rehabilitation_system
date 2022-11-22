@@ -1,0 +1,310 @@
+<!DOCTYPE>
+<html>
+<head>
+    <script src="bootstrap3.2.0/js/jquery-1.11.0.min.js"></script>
+    <script src="bootstrap3.2.0/js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>广师约跑</title>
+
+    <link rel="stylesheet" href="bootstrap3.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css" >
+</head>
+<body>
+
+<!--登陆条-->
+<div id="load-nav">
+	
+<div class="container">
+	<p class="pull-right visible-xs" id="teshu">
+        <button class="btn btn-sm btn-primary" id="yincang" data-toggle="modal" data-target="#myModal">搜索</button>
+        </p>
+        <!-- 模态框（Modal）搜索 -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times; </button>
+                <h4 class="modal-title" id="myModalLabel"> 内容搜索</h4>
+              </div>
+              <div class="modal-body">
+                <form class="navbar-form " role="search">
+                  <div class="form-group">
+                    
+                    <input type="text" class="form-control" id="model-text"  placeholder="请输入搜索内容">
+                  </div>
+                </form>
+                </div>
+                  <div class="modal-footer">
+                  	<button type="button" class="btn btn-primary">
+                       搜索
+                    </button>
+                    <button type="button" class="btn btn-default" 
+                       data-dismiss="modal">关闭
+                    </button>
+                    
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal -->
+            </div>
+       
+            <form id="Inform" class="navbar-form navbar-left " role="search">
+              <div class="form-group">
+                
+                <input type="text" class="form-control" id="key" 
+                 placeholder="请输入搜索内容">
+                <button type="submit" class="btn btn-default btn-sm">搜索</button>
+               </div>
+            </form>
+
+			<button class="btn btn-primary btn-sm pull-right" data-toggle="modal" 
+			   data-target="#loadModal" id="loadPositive">
+			   登陆
+			</button>
+			<!-- 模态框（Modal）登陆 -->
+		<div class="modal fade" id="loadModal" tabindex="-1" role="dialog" 
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+		  	<!--选项卡-->
+		     <ul id="myTab" class="nav nav-tabs">
+				   <li class="active">
+				      <a href="#winxinLoad" data-toggle="tab">
+				         微信登陆
+				      </a>
+				   </li>
+				   <li><a href="#xuehaoLoad" data-toggle="tab">学号登录</a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">
+				   <div class="tab-pane fade in active" id="winxinLoad">
+				   	  <h4>请用微信扫码登陆</h4>
+				      <img class="img-responsive" src="images/weixin1.jpg" alt="">
+				   </div>
+				   <div class="tab-pane fade" id="xuehaoLoad">
+				      <form class="navbar-form " role="search">
+                  		<div class="form-group">
+                  		<p>
+                  			<label for="#xuehao">学号</label>
+                   	 		<input type="text" class="form-control" id="xuehao"  placeholder="请输入学号">
+                  		</p>
+                    	<p>
+                    		<label for="#xuehao">密码</label>
+                   	 		<input type="password" class="form-control" id="xuehao"  placeholder="请输入密码">
+                   	 		
+                    	</p>
+                   	 	<div class="checkbox">
+					      <label>
+					      <input type="checkbox"> 记住密码
+					      <a href="#">忘记密码</a>
+					      </label>
+					   </div>
+                 		</div>
+                	</form>
+				   </div>
+				</div>
+		     <div class="modal-footer">
+		     	<button type="button" class="btn btn-primary">
+		           登陆
+		        </button>
+		        <button type="button" class="btn btn-default" 
+		           data-dismiss="modal">关闭
+		        </button>
+		        
+		     </div>
+		  </div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+		</div>		
+</div>
+
+</div>
+<!--header start-->
+<header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <nav class="navbar navbar-inverse" id="Hnav" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header" id="Nhead">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brandA" href="#">广师约跑</a>
+          
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav" id="Dropul">
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="ativity.html" target="_blank">约跑活动</a></li>
+                <li><a href="product.html" target="_blank">约跑装备</a></li>
+                <li><a href="person.html" target="_blank">个人中心</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </nav>
+      </div><!--col-md-8-->
+    </div><!--row-->
+  </div><!-- container -->
+</header>
+<!--header end-->
+
+<!--carousel start-->
+<div id="myCarousel" class="carousel slide">
+   <!-- 轮播（Carousel）指标 -->
+   <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+   </ol>   
+   <!-- 轮播（Carousel）项目 -->
+   <div class="carousel-inner">
+      <div class="item active">
+         <img class="carousel-inner img-responsive" src="images/banner1.jpg">
+         <div class="carousel-caption carousel-title">爱跑步，爱交友</div>
+         <div  class="carousel-caption carousel-brief">广师约跑是一个鼓励和倡导运动的健康类网站，提供线上发布跑步活动，吸引跑步爱好者，让大家在跑步的同时，不仅能收获健康，还能收获新朋友、新乐趣。与此同时，还提供线上买卖运动套装，精美绝伦、质量优异的跑步装备一定可以，带给大家舒适、安全的健身体验。</div>
+      </div>
+      <div class="item">
+         <img class="carousel-inner img-responsive" src="images/banner4.jpg" alt="Second slide">
+         <div class="carousel-caption carousel-title">我运动，我快乐</div>
+         <div  class="carousel-caption carousel-brief">改善身体健康，摆脱亚健康状态，需要从日常生活中的一点一滴开始。</div>
+      </div>
+      <div class="item">
+         <img class="carousel-inner img-responsive" src="images/banner3.jpg" alt="Third slide">
+         <div class="carousel-caption carousel-title">青春无极限，年轻就要跑</div>
+         <div  class="carousel-caption carousel-brief">别让宝贵的青春萎蔫在颓废的宿舍里，年轻即奔跑，跑步也可约，一起挥洒汗水去吧！</div>
+      </div>
+   </div>
+   <!-- 轮播（Carousel）导航 -->
+    <a class="carousel-control left " href="#myCarousel"
+             data-slide="prev"></a>
+    <a class="carousel-control right " href="#myCarousel"
+             data-slide="next"></a>
+</div>
+
+<!--carousel end-->
+
+<!--ativity start-->
+<div id="ativity">
+	<div class="container">
+	<h4>约跑活动</h4>
+	<div class="row">
+		<div class="col-md-4 col-sm-4 img-box">
+			<a href="ativity.html" target="_blank">
+				<img class="img-responsive" src="images/ativity0.jpg" alt="">
+			</a>
+			<div class="img-bg"></div>
+			<div class="img-txt">
+			<span class="txt-left">已有123人报名</span>
+			<span class="txt-right">距离1天2小时开始</span>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-4  img-box">
+			<a href="ativity.html" target="_blank">
+				<img class="img-responsive" src="images/ativity1.jpg" alt="">
+			</a>
+			<div class="img-bg"></div>
+			<div class="img-txt">
+			<span class="txt-left">已有123人报名</span>
+			<span class="txt-right">距离1天2小时开始</span>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-4  img-box">
+			<a href="ativity.html" target="_blank">
+				<img class="img-responsive" src="images/ativity2.jpg" alt="">
+			</a>
+			<div class="img-bg"></div>
+			<div class="img-txt">
+			<span class="txt-left">已有123人报名</span>
+			<span class="txt-right">距离1天2小时开始</span>
+			</div>
+		</div>
+		
+	</div>
+	<div class="row">
+		<button class="btn btn-primary">查看更多</button>
+		</div>
+	<hr>
+</div>
+</div>
+<!--ativity end-->
+
+<!--product start-->
+<div id="product">
+	<div class="container">
+		<h4>约跑装备</h4>
+		<div class="row">
+			<div class="col-md-3 col-sm-6 img-box">
+				<a href="product.html" target="_blank"><img class="img-responsive img-rounded" src="images/shoes.jpg" alt=""></a>
+				<p>李宁小Y3黑武士训练鞋 网面透气黑白奥利奥跑步鞋休闲鞋AFPK013-3</p>
+				<p>￥ 120.0</p>
+			</div>
+			<div class="col-md-3 col-sm-6 img-box">
+				<a href=""><img class="img-responsive img-rounded" src="images/goods1.jpg" alt=""></a>
+				<div class="one">
+				<p><a href="">李宁云三代跑步鞋男鞋2016夏季新款网面透气轻便减震跑鞋运动鞋</a></p>
+				<P>￥ 219.00</P>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 img-box">
+				<a href=""><img class="img-responsive img-rounded" src="images/goods3.jpg" alt=""></a>
+				<p><a href="">男士运动套装夏季纯棉跑步健身服女短袖短裤大码情侣休闲服薄款潮</a></p>
+				<p>￥ 95.00</p>
+			</div>
+			<div class="col-md-3 col-sm-6 img-box">
+				<a href=""><img class="img-responsive img-rounded" src="images/goods4.jpg" alt=""></a>
+				<p><a href="">健身服男套装男士短裤长裤健身房运动服套装大码短袖跑步服衣服夏</a></p>
+				<p>￥ 120.0</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-sm-6 img-box">
+				<a href=""><img class="img-responsive img-rounded" src="images/goods5.jpg" alt=""></a>
+				<p><a href="">跑步运动腰包多功能臂包防盗隐形贴身手机休闲小腰包男女户外用品</a></p>
+				<p>¥ 33.00-39.00</p>
+			</div>
+			<div class="col-md-3 col-sm-6 img-box">
+				<a href=""><img class="img-responsive img-rounded" src="images/goods6.jpg" alt=""></a>
+				<p><a href="">跑步手机臂包运动手臂包臂袋苹果健身装备绑带臂带男女臂套手腕包</a></p>
+				<p>￥ 48.00-58.00</p>
+			</div>
+			<div class="col-md-3 col-sm-6 img-box">
+				<a href=""><img class="img-responsive img-rounded" src="images/goods5.jpg" alt=""></a>
+				<p><a href="">夜跑灯安全夜跑一族社团装备鞋夹灯警示信号运动脚环跑步灯</a></p>
+				<p>¥ 12.24</p>
+			</div>
+			<div class="col-md-3 col-sm-6 img-box">
+				<a href=""><img class="img-responsive img-rounded" src="images/goods8.jpg" alt=""></a>
+				<p><a href="">荧光棒配件批发100根夜光棒一次性银光棒眼睛框发夹球形配件大号</a></p>
+				<p>¥ 0.38 - 0.65</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<button class="btn btn-primary">查看更多</button>
+		</div>
+		<hr>
+	</div>	<!--container-->
+</div>
+<!--product end-->
+
+<footer>
+	<div class="container">
+		<p> <a href="http://www.gdin.edu.cn/" target="_blank">学校首页</a>
+			<a href="#">关于我们</a>
+			<a href="#">联系我们</a>
+			<a href="#" class="a-right">加入我们</a>
+		</p>
+		<p>线上广师--广师约跑 © 2016</p>
+		<p>广州市中山大道293号广东技术师范学院</p>
+	
+	</div>
+		
+</footer>
+		
+</body>
+</html>
