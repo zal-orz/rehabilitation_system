@@ -99,7 +99,7 @@ export default class News extends React.Component {
   render() {
     return (
       <div>
-        <List renderHeader={() => '密码应用相关资讯'} className="my-list">
+        <List renderHeader={() => '资讯'} className="my-list">
           {this.renderNews()}
         </List>
         {this.renderPagination()}

@@ -1,0 +1,8 @@
+{
+    "tasks": [
+     {
+         "command": "npm start",
+         "label": "npm start",
+     }   
+    ]
+}

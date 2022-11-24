@@ -95,7 +95,7 @@ export default class videos extends React.Component {
   render() {
     return (
       <div>
-        <List renderHeader={() => '密码应用相关视频'} className="my-list">
+        <List renderHeader={() => '视频'} className="my-list">
           {this.renderVideos()}
         </List>
         {this.renderPagination()}

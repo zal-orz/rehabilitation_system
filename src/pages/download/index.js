@@ -45,7 +45,7 @@ export default class Download extends React.Component {
         return (
             <div>
                 <div className='am-list-header'>
-                    密码应用相关资源下载
+                    相关资源下载
                 </div>
             <div className='box_con'>
                 <ul>
