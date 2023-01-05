@@ -18,6 +18,8 @@ import Nav4 from '../../assets/images/nav-4.png'
 // 导入样式文件
 import './index.scss'
 
+const IP='167.99.66.97'
+
 //引入Item和Brief组件
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -66,8 +68,8 @@ export default class Index extends React.Component {
 
   // 获取轮播图数据
   async getSwipers() {
-    const res = await axios.get('http://43.128.63.185:8000/home/swiper')
-    //console.log(res)
+    const res = await axios.get('http://'+IP+':8000/home/swiper')
+    console.log(res)
     this.setState({
       swipers: res.data.body,//加载的数据
       isSwiperLoaded: true//是否已经完成加载
@@ -76,7 +78,7 @@ export default class Index extends React.Component {
 
   //获取最新资讯数据
   async getlist() {
-    const res = await axios.get('http://43.128.63.185:8000/gethomelist')
+    const res = await axios.get('http://'+IP+':8000/gethomelist')
     //console.log(res)
     this.setState({
       newslist: res.data
@@ -97,7 +99,7 @@ export default class Index extends React.Component {
         }}
       >
         <img
-          src={`http://43.128.63.185:8000/getimg/${item.imgSrc}`}
+          src={`http://`+IP+`:8000/getimg/${item.imgSrc}`}
           alt=""
           style={{ width: '100%', verticalAlign: 'top' }}
         />

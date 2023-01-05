@@ -10,7 +10,7 @@ import { clear } from 'antd-mobile-v5/es/components/dialog/clear'
 
 
 const LoginRouter = withRouter(Login)
-
+const IP='167.99.66.97'
 
 export default class Profile extends React.Component {
 
@@ -85,7 +85,7 @@ export default class Profile extends React.Component {
             <Button block color='primary' size='large' onClick={
               async () => {
                 if (this.state.username !== '') {
-                  const res = await axios.post('http://43.128.63.185:8000/change_name', {
+                  const res = await axios.post('http://'+IP+':8000/change_name', {
                     'name': this.state.username,
                     'id': data.id,
                   })
@@ -127,7 +127,7 @@ export default class Profile extends React.Component {
             <Button block color='primary' size='large' onClick={
               async () => {
                 if (this.state.password !== '') {
-                  const res = await axios.post('http://43.128.63.185:8000/change_password', {
+                  const res = await axios.post('http://'+IP+':8000/change_password', {
                     'password': this.state.password,
                     'id': data.id,
                   })
@@ -205,12 +205,12 @@ export default class Profile extends React.Component {
     body.append('file', this.avatarInputRef.current.files[0])
     body.append('id', data.id)
     //console.log('files', this.avatarInputRef.current.files[0])
-    const res = await axios.post('http://43.128.63.185:8000/change_avatar', body, {
+    const res = await axios.post('http://'+IP+':8000/change_avatar', body, {
       headers: {
         'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
       }
     });
-    const res1 = await axios.post('http://43.128.63.185:8000/login', {
+    const res1 = await axios.post('http://'+IP+':8000/login', {
       'name': data.name,
       'password': data.password,
     })

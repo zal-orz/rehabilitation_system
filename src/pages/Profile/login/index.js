@@ -6,6 +6,8 @@ import { Form, Input, Button, } from 'antd-mobile-v5'
 
 import './index.scss'
 
+const IP='167.99.66.97'
+
 export default class Login extends React.Component {
     state = {
         username: '',
@@ -48,7 +50,7 @@ export default class Login extends React.Component {
 
     //处理登录请求
     async login(updata) {
-        const res = await axios.post('http://43.128.63.185:8000/login', {
+        const res = await axios.post('http://'+IP+':8000/login', {
             'name': this.state.username,
             'password': this.state.password,
         })

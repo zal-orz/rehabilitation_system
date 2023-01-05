@@ -6,6 +6,8 @@ import { Form, Input, Button, } from 'antd-mobile-v5'
 
 import './index.scss'
 
+const IP='167.99.66.97'
+
 export default class Register extends React.Component {
     state = {
         username: '',
@@ -46,14 +48,14 @@ export default class Register extends React.Component {
     //处理注册请求
     async login(updata) {
         if (this.state.username !== '' && this.state.password !== '') {
-            const res = await axios.post('http://43.128.63.185:8000/register_name', {
+            const res = await axios.post('http://'+IP+':8000/register_name', {
                 'name': this.state.username,
             })
             if (res.data.length === 0) {
-                const res1 = await axios.post('http://43.128.63.185:8000/register_getid')
+                const res1 = await axios.post('http://'+IP+':8000/register_getid')
                 const id = res1.data.id + 1;
                 //console.log(id)
-                const res2 = await axios.post('http://43.128.63.185:8000/register', {
+                const res2 = await axios.post('http://'+IP+':8000/register', {
                     'id': id,
                     'name': this.state.username,
                     'password': this.state.password,

@@ -4,6 +4,8 @@ import houseicon from '../../assets/images/home.png'
 import axios from 'axios'
 import showhtml from '../../components/showhtml'
 
+const IP='167.99.66.97'
+
 export default class NewsDetails extends React.Component {
   state = {
     url:'',
@@ -44,12 +46,12 @@ export default class NewsDetails extends React.Component {
   //获取数据
   getContent=async (id)=>{
     //console.log(id)
-    const res = await axios.get('http://167.99.66.97:8000/api/news/1/')
+    const res = await axios.get('http://'+IP+':8000/getcontent/news_'+id)
     console.log(res)
     this.setState({
-      title:res.data.title,
-      subtitle:res.data.subtitle,
-      content:res.data.content,
+      title:res.data[0].title,
+      subtitle:res.data[0].subtitle,
+      content:res.data[0].content,
     })
   }
 

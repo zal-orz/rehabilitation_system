@@ -3,6 +3,8 @@ import axios from 'axios'
 import './index.scss'
 import { Item } from 'antd-mobile-v2/lib/tab-bar';
 
+const IP='167.99.66.97'
+
 export default class Download extends React.Component {
     state = {
         data: [],
@@ -13,7 +15,7 @@ export default class Download extends React.Component {
     }
 
     getdownloadlist = async () => {
-        const res = await axios.get('http://43.128.63.185:8000/download')
+        const res = await axios.get('http://'+IP+':8000/download')
         console.log(res)
         this.setState({
             data: res.data,

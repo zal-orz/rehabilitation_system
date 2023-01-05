@@ -8,6 +8,8 @@ import 'antd-mobile/dist/antd-mobile.css';
 import './index.scss';
 import { Radio, Space, NavBar, Button, Modal } from 'antd-mobile-v5';
 
+const IP='167.99.66.97'
+
 const Item = List.Item;
 const Brief = Item.Brief;
 var score = [];//当前正确题目数组，1为正确0为错误，初始全部错误
@@ -24,7 +26,7 @@ export default class Text extends React.Component {
   }
 
   gettest = async () => {
-    const res = await axios.get('http://43.128.63.185:8000/gettest')//请求对应页数
+    const res = await axios.get('http://'+IP+':8000/gettest')//请求对应页数
     //console.log(res)    
     this.setState({
       data: res.data,

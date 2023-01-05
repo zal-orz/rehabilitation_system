@@ -16,6 +16,8 @@ import axios from 'axios'
 import houseicon from '../../assets/images/home.png'
 import './index.scss';
 
+const IP='167.99.66.97'
+
 export default class videoDetails extends React.Component {
     state = {
         url: '',
@@ -41,7 +43,7 @@ export default class videoDetails extends React.Component {
     //获取数据
     getContent = async (id) => {
         //console.log(id)
-        const res = await axios.get('http://43.128.63.185:8000/getVideoContent/' + id)
+        const res = await axios.get('http://'+IP+':8000/getVideoContent/' + id)
         console.log(res)
         this.setState({
             title: res.data[0].title,

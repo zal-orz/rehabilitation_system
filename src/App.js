@@ -12,6 +12,7 @@ import {
 import withRouter from './components/withRouter'
 import { useState } from 'react/cjs/react.production.min'
 
+const IP='167.99.66.97'
 
 export const { Provider, Consumer } = React.createContext();
 

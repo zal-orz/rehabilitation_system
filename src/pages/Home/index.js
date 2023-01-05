@@ -27,6 +27,8 @@ import Test from '../test'
 //导入context
 import { Consumer } from '../../App'
 
+const IP='167.99.66.97'
+
 const NewsDetailsRouter = withRouter(NewsDetails)
 const IndexRouter = withRouter(Index);
 const NewsRouter = withRouter(News);

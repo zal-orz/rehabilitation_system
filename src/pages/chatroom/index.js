@@ -7,6 +7,8 @@ import transformArrayBufferToBase64 from '../../components/transfromBuffer'
 
 import textimg from '../../assets/images/head.jpg'
 
+const IP='167.99.66.97'
+
 export default class Chatroom extends React.Component {
 
     constructor({ data, updata }) {
@@ -14,7 +16,7 @@ export default class Chatroom extends React.Component {
         if (!data) { return }
         //websocket建立连接
         //用于发送消息到服务端以及接收自己的消息
-        this.ws = new WebSocket("ws:43.128.63.185:8000/ws");
+        this.ws = new WebSocket("ws:"+IP+":8000/ws");
         this.ws.onopen = () => {
             /*得到连接状态：
                 CONNECTING：值为0，表示正在连接。
@@ -57,7 +59,7 @@ export default class Chatroom extends React.Component {
     }
 
     getMessage = async () => {
-        const res = await axios.get('http://43.128.63.185:8000/chatroom_msg');
+        const res = await axios.get('http://'+IP+':8000/chatroom_msg');
         const msg = res.data.reverse().map(item => ({ ...item, avatar: '' }));
         Promise.all(msg.map(async (item, index) => {
             return this.getAvatar(item).then((value) => {
@@ -89,7 +91,7 @@ export default class Chatroom extends React.Component {
         let dataStr = '';
         //console.log('头像：', data.name)
         if (data.name) {
-            const res = await axios.post('http://43.128.63.185:8000/get_avatar_byname', {
+            const res = await axios.post('http://'+IP+':8000/get_avatar_byname', {
                 'name': data.name,
             })
 

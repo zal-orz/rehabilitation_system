@@ -7,6 +7,8 @@ import showhtml from '../../components/showhtml';//string转换html
 import 'antd-mobile/dist/antd-mobile.css';
 import './index.scss';
 
+const IP='167.99.66.97'
+
 const Item = List.Item;
 const Brief = Item.Brief;
 const locale = {
@@ -35,7 +37,7 @@ export default class News extends React.Component {
 
   //获取分页信息
   gettotal= async ()=>{
-    const res1 = await axios.get('http://43.128.63.185:8000/getnewslist')
+    const res1 = await axios.get('http://'+IP+':8000/getnewslist')
     //console.log(res1)
     this.setState({
       total:parseInt(res1.data.total)
@@ -44,7 +46,7 @@ export default class News extends React.Component {
 
   //获取资讯信息
   getnewlist = async () => {
-    const res = await axios.get('http://43.128.63.185:8000/getnewslist/'+this.state.page)//请求对应页数
+    const res = await axios.get('http://'+IP+':8000/getnewslist/'+this.state.page)//请求对应页数
     //console.log(res)    
     this.setState({
       data: res.data,
