@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from 'react'
 import axios from 'axios'
 import { Consumer } from "../../App.js"
@@ -24,6 +25,7 @@ export default class Profile extends React.Component {
 
   //判断是否已经登录
   isLogin(data, updata) {
+    console.log(data)
     if (data == null) {
       return <LoginRouter />
     } else {
@@ -65,7 +67,12 @@ export default class Profile extends React.Component {
   //获取头像src
   getAvatar(data) {
     //console.log(data)
-    const dataStr = transformArrayBufferToBase64(data.avatar.data)
+    let dataStr=null
+    if(data.avatar!=null){
+      dataStr = transformArrayBufferToBase64(data.avatar.data)
+    }else{
+      dataStr=null
+    }
     //console.log(data.avatar.data)
     return "data:image/png;base64," + dataStr
   }
