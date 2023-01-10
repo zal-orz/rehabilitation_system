@@ -37,11 +37,11 @@ app.use((req, res, next) => {
 var mysql = require('mysql');
 //创建连接池
 var pool = mysql.createPool({
-    host: 'localhost', //数据库地址
+    host: '', //数据库地址
     port: '3306',//端口号
-    user: 'mmx',//用户名
-    password: 'LsFCE43sfDnyT3cd',//密码
-    database: 'mmx'//数据库名称
+    user: '',//用户名
+    password: '',//密码
+    database: ''//数据库名称
 });
 
 //响应JSON数据

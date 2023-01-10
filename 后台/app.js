@@ -5,11 +5,11 @@ const {getDB,saveDB}=require('./db')
 //数据库
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-    host: 'localhost', //数据库地址
-    port: '3306',//端口号
-    user: 'mmx',//用户名
-    password: 'LsFCE43sfDnyT3cd',//密码
-    database: 'mmx'//数据库名称
+    host: , //数据库地址
+    port: ,//端口号
+    user: ,//用户名
+    password: ,//密码
+    database: //数据库名称
 });
 connection.connect();//建立连接
 
